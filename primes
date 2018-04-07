@@ -1,0 +1,31 @@
+n = int( input ( "Please enter a number greather than 2: " ) )
+
+#numbers list range 2 to input + 1
+numbers = list( range ( 2, n+1 ) )
+#set current positon for element. positong 0 is number 2
+current = 0
+new_list = []
+
+#set condition while current number is not equal to second last number
+while numbers[ current ] != numbers[len(numbers)-2]:
+    new_list = []
+    # iterate over position element 0 (value 2) and current + 1
+    for i in range( 0, current + 1 ):
+        #add iterated elements to list
+        new_list.append( numbers[ i ] )
+
+    # iterate over current position plus one and length of numbers in list
+    for i in range ( current + 1, len ( numbers )  ):
+         #if iterated numbers modulo numbers current are not equal to zero
+        if ( numbers[i] % numbers[current] != 0 ):
+            #create new list
+            new_list.append( numbers [ i ] )
+            print (new_list)
+    #numbers set to put out list of remaining numbers
+    numbers = list( new_list )
+    #current set to + 1
+    current += 1
+
+    
+print (numbers)
+    
